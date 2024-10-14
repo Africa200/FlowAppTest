@@ -1,1 +1,21 @@
-spring.application.name=GateWay-Service
+spring:
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: Product-Service
+            uri: http://localhost:8080
+            predicates:
+              - Path=/api/products/**
+          - id: Order-Service
+            uri: http://localhost:8081
+            predicates:
+              - Path=/api/order/**
+          - id: Inventory-Service
+            uri: http://localhost:8082
+            predicates:
+              - Path=/api/inventory/**
+  application:
+    name: GateWay-Service
+server:
+  port: 8888

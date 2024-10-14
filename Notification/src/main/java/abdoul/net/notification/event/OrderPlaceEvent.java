@@ -1,4 +1,4 @@
-package abdoul.net.orderservice.event;
+package abdoul.net.notification.event;
 
 import lombok.*;
 
